@@ -10,7 +10,6 @@ export default ({ image, dataModel }) => {
     const imageRef = useRef();
     useEffect(() => {
       const classifyImage = async () => {
-        console.log(imageInformation.fileType);
         const predictions = await dataModel.classify(imageRef.current);
         setImageInformation({
           ...imageInformation,
