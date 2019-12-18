@@ -1,0 +1,174 @@
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.oldTvApp {
+  background-color: #282c34;
+  color: #eaeaea;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+}
+.tvContainer {
+  position: relative;
+  height: 800px;
+  width: 800px;
+  /*  height: 100%;
+    width: 100%;  */
+  margin: auto;
+  border: "1px solid tomato";
+}
+
+.screenCanvas {
+  position: absolute;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-72%, -22%);
+  z-index: 2;
+  width: 310px;
+  height: 290px;
+  border-radius: 5%;
+  /* height: 100%;
+    width: 100%; */
+}
+.tvImage {
+  position: absolute;
+  /*  top: 10px;*/
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 500px;
+  height: 820px;
+  /*  height: 100%; */
+}
+.tvControls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(8.5rem, -22%);
+  z-index: 2;
+  width: 100px;
+  height: 350px;
+  background-color: black;
+}
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  z-index: 3;
+}
+.button-item {
+  border-radius: 10%;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+  font-family: "Roboto";
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+.button-item-off {
+  background-color: tomato;
+}
+.button-item-on {
+  background-color: #07db26;
+}
+button span {
+  display: inline-block;
+  position: relative;
+  margin-top: 5px;
+}
+button b {
+  --w: 7px;
+  overflow: hidden;
+  border-radius: var(--w);
+  display: grid;
+  width: var(--w);
+  height: 35px;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 3;
+  will-change: transform;
+}
+button b:before {
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--w);
+  transform: translateY(-15px);
+  transition-timing-function: var(--timing);
+  transition: 0.5s;
+}
+
+button.active b:before {
+  transform: translateY(12px);
+  transition-delay: 0.27s;
+  transition-timing-function: cubic-bezier(0.25, 0.25, 0.25, 1.25);
+}
+
+button svg {
+  --dash: 190;
+  stroke-linecap: round;
+  stroke-dasharray: var(--dash);
+  stroke-dashoffset: var(--dash);
+  width: 46px;
+  height: 46px;
+  transform: scaleX(-1) rotate(-89deg);
+  transition: 0.4s;
+  transition-timing-function: var(--timing);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  will-change: transform, stroke-dashoffset;
+}
+button:not(.active) svg {
+  stroke-dashoffset: 40;
+  transform: scaleX(-1) rotate(-52deg);
+  transition: 0.5s 0.25s;
+}
+.button-bw {
+  background: rgb(51, 47, 47);
+  background: radial-gradient(
+    circle,
+    rgba(51, 47, 47, 0.773546918767507) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.button-rgb {
+  background: linear-gradient(270deg, rgb(80, 127, 255), #46ffa394, tomato);
+  transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98), opacity 0.5s;
+}
+.button-bw {
+  background: linear-gradient(270deg, #e0c5c3, #6e6262, #363030);
+  transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98), opacity 0.5s;
+}
+.button-image {
+  background: url("../assets/ghost-icon-small.png");
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.ghost-hidden{
+    display: none;
+    width: 250px;
+    height: 250px;
+}
+.ghost-visible{
+    width: 250px;
+    height: 250px;
+}

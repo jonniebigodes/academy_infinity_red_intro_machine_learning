@@ -1,0 +1,55 @@
+.nsfwApp {
+    background-color: #282c34;
+    color: #eaeaea;
+    text-align: center;
+    font-size: calc(10px + 2vmin);
+    min-height: 100vh;
+    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    padding: 20px;
+  }
+  .dropzone {
+    padding: 30px;
+    height: 30vh;
+    border: 5px dashed white;
+    outline: none;
+    cursor: pointer;
+  }
+  .dropzone-active {
+    background-color: #f1e2ff;
+    border: 5px solid #2fd7b5;
+  }
+  .dropzone-content {
+    align-self: center;
+    font-size: 24px;
+  }
+  .file-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .file-item {
+    width: calc(33% - 20px);
+    height: calc(33% - 20px);
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    margin: 10px;
+    transition: all 0.2s linear;
+  }
+  .file-img {
+    margin: 0.85rem 1.045rem;
+    width: 80%;
+    height: 80%;
+  }
+  .nsfw-file-image {
+    margin: 0.85rem 1.045rem;
+    width: 80%;
+    height: 80%;
+    -webkit-filter: blur(2.5rem); /* Safari 6.0 - 9.0 */
+    filter: blur(2.5rem);
+  }
+  .blur-gif {
+    -webkit-filter: blur(2.5rem); /* Safari 6.0 - 9.0 */
+    filter: blur(2.5rem);
+  }

@@ -4,7 +4,7 @@ import DropZone from "../components/NSFWHomeWork/DropZone";
 import ImageList from '../components/NSFWHomeWork/ImageList'
 import Footer from '../components/Footer'
 import uuid from "uuid/v4";
-import "../assets/App.css";
+import "../assets/nsfw.css";
 
 function NsfwHomework() {
   const [images, setImages] = useState([]);
