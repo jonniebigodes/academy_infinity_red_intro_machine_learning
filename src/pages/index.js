@@ -27,6 +27,12 @@ export default () => (
             If you want to check out my solution for the old tv challenge, go <Link to="/old-tv/">here</Link>
           </div>
         </section>
+        <section className="assignment-section">
+          <h4>Cats and dogs challenge</h4>
+          <div className="assignment-section-content">
+            If you want to check out my solution for the cats and dogs challenge, go <Link to="/cats-and-dogs/">here</Link>
+          </div>
+        </section>
       </div>
     </div>
     <div className="containerDeps">

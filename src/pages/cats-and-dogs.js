@@ -15,6 +15,7 @@ export default () => {
           return tf.concat(listOfImages,1)
       })
       tf.browser.toPixels(listOfDogsCats, gridCatsDogs.current)
+      listOfDogsCats.dispose()
       //
     }
     loadCatsNDogs()
