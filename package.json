@@ -16,6 +16,7 @@
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.0.4",
     "@tensorflow/tfjs": "^1.4.0",
+    "dogs-n-cats": "^1.2.0",
     "gatsby": "^2.18.8",
     "nsfwjs": "^2.1.0",
     "react": "^16.12.0",

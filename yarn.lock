@@ -3292,6 +3292,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dogs-n-cats@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/dogs-n-cats/-/dogs-n-cats-1.2.0.tgz#9bcbcd4e214521a53b855c142aa3fcae372447aa"
+  integrity sha512-1AXmSRZVeX/uNdAmV7Ce+AlIhjFE9QsvR7Lrl9mKhT90DGeznxyvZz3sCbmUWHFbyx2AOg4UpIAsJp0A7upYug==
+
 dom-converter@^0.2:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
