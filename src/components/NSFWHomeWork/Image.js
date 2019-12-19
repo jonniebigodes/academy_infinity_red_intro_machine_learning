@@ -39,11 +39,17 @@ export default ({ image, dataModel }) => {
           ref={imageRef}
         />
         <div>
-          <span>
+          <span style={{
+            overflow:'hidden',
+            whiteSpace:'nowrap',
+            textOverflow: 'ellipsis',
+            width:'300px',
+            display:'inline-block'
+          }}>
             Image{" "}
-            {imageInformation.safeContent ? imageInformation.name : "######"} is a{" "}
-            {imageInformation.safeContent ? "ok image" : "no no image"}
+            {imageInformation.safeContent ? imageInformation.name : "######"}
           </span>
+          <span><p>{imageInformation.safeContent ? "ok image" : "no no image"}</p></span>
           <span><p>Categorized as {imageInformation.imageCategory} with a prediction value of {imageInformation.preditionValue}%</p></span>
           <div>
             {imageInformation.probabilityList.map((item,index) => (

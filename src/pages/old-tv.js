@@ -34,24 +34,16 @@ export default () => {
       .div(512);
     })
     setNoiseImageTensors(imageWithNoise)
+    console.log(`did mount num tensor:${tf.memory().numTensors}`)
+    
+    // testing disposal of tensors
+    imageToTensor.dispose()
+    //
   }, [])
-
-  /* const onLoadGhostImage=()=>{
-    console.log(`onLoadGhostImage entered`)
-    const imageToTensor=tf.image.resizeBilinear(
-      tf.browser.fromPixels(ghostImageRef.current),
-      [250, 250],
-      true
-    )
-     const imageWithNoise= [...Array(20).keys()].map(x => {
-      return tf.randomUniform([250, 250, 3], 0, 255, "int32").add(imageToTensor)
-      .div(512);
-    })
-    setNoiseImageTensors(imageWithNoise)
-  } */
   useInterval(
     () => {
       if (selectedChannel !== "") {
+        console.log(`effect num tensors:${tf.memory().numTensors}`)
         let TensorInfo = null
         if (selectedChannel === "bw") {
           TensorInfo = bwTensors[currentTensor]
@@ -64,7 +56,6 @@ export default () => {
         if (selectedChannel === "img") {
           TensorInfo = noiseImageTensor[currentTensor]
           tf.browser.toPixels(TensorInfo, tvCanvas.current)
-         
         }
         setCurrentTensor(
           currentTensor >= bwTensors.length - 1 ? 0 : currentTensor + 1
@@ -74,11 +65,13 @@ export default () => {
     tvOn ? 50 : null
   )
 
-  const onTvOnClick = () => {
+  const onTvOnClick = async () => {
     setTvOn(!tvOn)
     setCurrentTensor(0)
     setselectedChannel('')
-    tf.browser.toPixels(tvOn?offTensor:onTensor,tvCanvas.current)
+    await tf.browser.toPixels(tvOn?offTensor:onTensor,tvCanvas.current)
+    
+    
   }
   const handleTvMode=value=>{
     setselectedChannel(tvOn?value:'')

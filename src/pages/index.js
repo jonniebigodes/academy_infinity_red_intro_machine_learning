@@ -30,7 +30,7 @@ export default () => (
         <section className="assignment-section">
           <h4>Cats and dogs challenge</h4>
           <div className="assignment-section-content">
-            If you want to check out my solution for the cats and dogs challenge, go <Link to="/cats-and-dogs/">here</Link>
+            If you want to check out my solution for the cats and dogs challenge, go <Link to="/dnc/">here</Link>
           </div>
         </section>
       </div>
